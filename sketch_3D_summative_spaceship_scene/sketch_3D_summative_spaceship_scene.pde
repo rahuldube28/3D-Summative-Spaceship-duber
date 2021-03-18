@@ -45,7 +45,7 @@ void draw()
 
 
   speed=0.1;
-  topSpeed=20;
+  topSpeed=10;
   PVector target = new PVector(300, -300, 0);
   PVector dir = target.copy().sub(pos); 
   dir.normalize(); 
@@ -80,7 +80,8 @@ void draw()
   if (shipMove<-200)
   {
     translate(pos.x, pos.y, pos.z);
-    rotateX(1.5708+0.785398+(globeRotate*100));
+    rotateX(1.5708+0.785398);
+    rotateY(globeRotate*100);
   }
   shape(rocketcapsule);
   popMatrix();
@@ -93,7 +94,7 @@ void draw()
   noStroke();
   translate(300, 580, 0);
   globeRotate=globeRotate-(0.00174533/2);
-  rotateX(globeRotate);
+  rotateY(globeRotate);
   shape(globe);
   popMatrix();
 }
